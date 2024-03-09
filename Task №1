@@ -1,0 +1,26 @@
+Console.Write("Введите количество строк в матрице: ");
+int row = int.Parse(Console.ReadLine());
+
+Console.Write("Введите количество столбцов в матрице: ");
+int coul = int.Parse(Console.ReadLine());
+
+Random rand = new Random();
+int[,] Matrix = new int[row, coul];
+for (int i = 0; i < row; i++)
+{
+    for (int k = 0; k < coul; k++)
+    {
+        Matrix[i, k] = rand.Next(0, 10);
+        Console.Write($"{Matrix[i, k]} ");
+    }
+    Console.WriteLine();
+}
+int sum = 0;
+foreach(int e in Matrix)
+{
+    sum += e;
+}
+Console.WriteLine($"Сумма всех элементов: {sum}");
+Console.ReadKey();
+
+
